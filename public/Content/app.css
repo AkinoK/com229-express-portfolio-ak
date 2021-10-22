@@ -1,0 +1,514 @@
+/* File name : app.css
+Student name : Akino Kashima 
+Student ID : 301155967
+Date: 10.02.2021  */
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F8FFEF;
+}
+
+hr {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Projects, Services and Contact pages titles */
+.pagetitle{
+  padding: 50px 50px 50px 50px;
+  font-family: pacifico;
+  text-align: center;
+  color: seagreen;
+}
+
+/* navbar */
+
+.navbar-brand{
+  padding: 0px;
+  font-size:0%;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+#logo {
+  width: auto;
+}
+
+.nav-item{
+  padding: 0 10px 0 10px;
+}
+
+.navbar{
+  padding-right: 50px;
+}
+
+#displayName{
+  pointer-events: none;
+}
+
+/* Home page */
+
+#hometitle {
+  padding: 130px 50px 50px 100px;
+  font-family: pacifico;
+  color: seagreen;
+  font-size: xxx-large;
+}
+
+#bg {
+  background-image: url("/Assets/images/image_home3.png");
+  background-repeat:no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+#statement {
+  font-family: 'Font Awesome 5 Free';
+  font-style: oblique;
+  font-weight: bold;
+  padding-left: 120px;
+}
+
+.aboutlink {
+  text-decoration: underline;
+  list-style: none;
+  color: seagreen;
+  font-weight: bold;
+  font-family: 'Font Awesome 5 Free';
+  padding-left: 300px;
+  padding-top: 20px;
+}
+
+.aboutlink a:hover{
+  color: white;
+  background-color: seagreen;
+}
+
+#aboutme{
+  margin: 20px;
+}
+
+/* About page */
+
+#abouttitle {
+  padding: 100px 50px 50px 100px;
+  font-family: pacifico;
+  color: seagreen;
+  font-size: xxx-large;
+  text-align: center;
+}
+.aboutcontent{
+  display: inline-flex;
+}
+
+.aboutme{
+  font-family: 'Font Awesome 5 Free';
+}
+
+#pdfbtn{
+  margin:20px;
+}
+
+.mypic{
+  width: 200px;
+  margin: 0 100px 0 150px;
+  box-shadow: 0 0 3px 1px #fff inset;
+}
+
+/* Projects page */
+
+.pjcontent{
+  display: flex;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 16px 20px -15px rgb(0 0 0 / 41%);
+}
+.pjimage {
+  width: 90%;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  height: 220px;
+}
+
+.pjtitle {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  color: seagreen;
+}
+
+.description {
+  margin: 0 20px 0 20px;
+  color: #777;
+}
+
+hr.pjhr{
+  left: 500px;
+  top: 20px;
+  width: 18px;
+  height: 300px;
+  background: seagreen;
+}
+
+/* Services page*/
+
+.services-content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.services-image {
+  height: 250px;
+  width: 90%;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.services-title {
+  font-size: 21px;
+  text-align: center;
+  color: seagreen;
+  font-weight: bold;
+  font-family: 'Font Awesome 5 Free';
+  
+}
+
+.services-item {
+  display: flex;
+  margin-right: 6px;
+  margin-left: 6px;
+  padding-top: 27px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 16px 20px -15px rgb(0 0 0 / 41%);
+}
+
+.services-paragraph {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 0px 30px 30px;
+  font-family: 'Font Awesome 5 Free';
+  color: #777;
+  line-height: 24px;
+  font-weight: 300;
+  text-align: center;
+
+}
+
+
+/* Contact page */
+
+#contact {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+  max-width: 840px;
+}
+
+/* Left contact page */
+
+.form-horizontal {
+  max-width: 400px;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+.form-control, 
+textarea {
+  max-width: 400px;
+  background-color:#fff;
+  color: black;
+  letter-spacing: 1px;
+  ;
+}
+
+textarea.form-control {
+  height: 200px;
+}
+
+#errorText{
+  color: red;
+}
+
+.send-button {
+  height: 34px;
+  width: 364px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+  background-color: seagreen;
+  color: white;
+}
+
+.alt-send-button {
+  width: 364px;
+  height: 34px;
+  transition: all .2s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 700 12px 'Lato', sans-serif;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.alt-send-button:hover {
+  transform: translate3d(0px, -29px, 0px);
+  background-color: seagreen;
+}
+
+.alt-send-button {
+  background-color: seagreen;
+  height: 23px;
+}
+
+.fa-paper-plane:before {
+  content: "\f1d8";
+  color: white;
+}
+
+
+/* Location, Phone, Email Section */
+.contact-list {
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.list-item {
+  line-height: 4;
+  color: #aaa;
+}
+
+.contact-text {
+  font: 300 18px 'Lato', sans-serif;
+  letter-spacing: 1.9px;
+  color: #bbb;
+}
+
+.place {
+  margin-left: 62px;
+}
+
+.phone {
+  margin-left: 56px;
+}
+
+.gmail {
+  margin-left: 53px;
+}
+
+.contact-text a {
+  color: #bbb;
+  text-decoration: white;
+  transition-duration: 0.2s;
+
+}
+
+.contact-text a:hover {
+  color: seagreen;
+  text-decoration: none;
+}
+
+.alt-send-button {
+  background-color: seagreen;
+  height: 23px;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+  position: relative;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.social-media-list li a {
+  color: seagreen;
+}
+
+.social-media-list li {
+  position: relative; 
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 10px 10px;
+  line-height: 60px;
+  border-radius: 50%;
+  background-color:white;
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+  border: solid 1px #bbb;
+}
+
+.social-media-list li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 0 1px white;
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+  background-color: seagreen; 
+}
+
+.social-media-list li:hover:after {
+  transform: scale(1.12);
+  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
+
+.social-media-list li:hover a {
+  color: white;
+}
+
+hr {
+  border-color: rgba(255,255,255,.6);
+}
+
+/* business contacts list */
+
+#addbtn {
+  border-width: 2px;
+  font-weight: bold;
+}
+
+/* add_edit page */
+
+.form {
+  margin-left: 115px;
+}
+
+.btns {
+  padding-right: 120px;
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+label {
+  display: inline-block;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: darkslategray;
+  padding-left: 5px;
+}
+
+/* login page */
+
+::selection {
+  background: #ed327b;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #ed327b;
+  color: #fff;
+}
+
+#loginform {
+border-radius:6px;
+padding:20px;
+padding-top:30px;
+width:30%;
+margin:50px auto; 
+background-color: #fff;
+box-shadow: 0 16px 20px -15px rgb(0 0 0 / 41%);
+
+}
+
+#logintitle {
+text-align:center;
+font-size:2rem;
+color:seagreen;
+margin-bottom:40px;
+font-family:pacifico;
+}
+
+
+.loginform-control {
+width:100%;
+background:#f5f5f5;
+border:0;
+padding:20px;
+border-radius:6px;
+margin-bottom:10px;
+border:1px solid #eee;
+}
+
+.loginbtn {
+position:relative;
+width:40%;
+padding:20px;
+border-radius:6px;
+border:0;
+background:#f26964;
+font-size:1.2em;
+color:#fff;
+text-shadow:1px 1px 0px rgba(0,0,0,.1);
+box-shadow:0px 3px 0px #c1524e;
+}
+
+
+
+.loginbtn:active {
+top:3px;
+box-shadow:none;
+}
+
+.cancelbtn{
+position:relative;
+width:40%;
+padding:20px;
+border-radius:6px;
+border:0;
+background:grey;
+font-size:1.2em;
+color:#fff;
+text-shadow:1px 1px 0px rgba(0,0,0,.1);
+box-shadow:0px 3px 0px rgb(100, 100, 100);
+}
+
+.loginpg-btns{
+  padding-left: 50px;
+}
+
+/* bottom-nav */
+
+.navbar-dark .navbar-text {
+  width: -webkit-fill-available;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
