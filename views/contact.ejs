@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% include partials/header.ejs %>
 <% include partials/main_nav.ejs %>
 
@@ -72,4 +73,80 @@
 </main>
 
 <% include partials/bottom_nav.ejs %>
+=======
+<% include partials/header.ejs %>
+<% include partials/main_nav.ejs %>
+
+<!-- Contact page Main Content -->
+
+<main class="container">
+  <div>
+  <h1 class="pagetitle"><%= title %> me!</h1>    
+   <section id="contact">    
+    <div class="contact-wrapper">
+    
+    <!-- Left contact page --> 
+
+      <!-- User input section -->
+      <form id="contact-form" class="form-horizontal" role="form" action="" novalidate="novalidate">
+       <fieldset id="contactform">
+        <div id="errorText"></div>  
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" class="form-control" id="name" placeholder="FIRST NAME" name="name" value="" required>
+            <p id="fnameError" class="errorMsg"></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" class="form-control" id="name" placeholder="LAST NAME" name="name" value="" required>
+            <p id="lnameError" class="errorMsg"></p>
+          </div>
+        </div>  
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+            <p id="emailError" class="errorMsg"></p>
+          </div>
+        </div>
+        <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+        <p id="adderror" class="errorMsg"></p>
+        
+        <!-- Submit button -->
+        <button class="btn send-button" id="submit" type="submit" value="SEND">
+          <div class="alt-send-button">
+            <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+          </div>      
+        </button>
+      </fieldset> 
+      </form>
+      
+    <!-- Right contact page --> 
+
+      <!-- Contact Info -->
+        <div class="direct-contact-container">  
+          <ul class="contact-list">
+            <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Toronto, ON</span></i></li>            
+            <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-416-666-0559" title="Give me a call">(1-416-666-0559)</a></span></i></li>            
+            <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">akashima@gmail.com</a></span></i></li>           
+          </ul>  
+          <hr>
+      <!-- Social Media List -->
+          <ul class="social-media-list">
+            <li><a href="https://github.com/AkinoK" target="_blank" class="contact-icon">
+              <i class="fab fa-github" aria-hidden="true"></i></a>              
+            </li>
+            <li><a href="https://www.instagram.com/akis_o2/?hl=en" target="_blank" class="contact-icon">
+              <i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </li>       
+          </ul>
+          <hr>  
+        </div>     
+    </div>    
+  </section>      
+  </div>
+</main>
+
+<% include partials/bottom_nav.ejs %>
+>>>>>>> dd6c681507599ea9f1f2adcfbe9aa99cf1ee1b37
 <% include partials/footer.ejs %>
