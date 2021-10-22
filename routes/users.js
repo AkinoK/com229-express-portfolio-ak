@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource')
 });
 
-/* GET users listing. Available on http://localhost:3000/users/john */
+/* GET users listing. Available on http://localhost:3000/users/akino */
 router.get('/akino', function(req, res, next) {  
   res.render('users', { 
     title: 'Users',

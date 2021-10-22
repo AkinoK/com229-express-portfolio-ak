@@ -36,5 +36,21 @@
     "@types/passport": "^1.0.7",
     "@types/passport-local": "^1.0.34",
     "@types/passport-local-mongoose": "^6.1.0"
-  }
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkinoK/com229-express-portfolio-ak.git"
+  },
+  "keywords": [
+    "express",
+    "portfolio",
+    "auth"
+  ],
+  "author": "Akino Kashima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkinoK/com229-express-portfolio-ak/issues"
+  },
+  "homepage": "https://github.com/AkinoK/com229-express-portfolio-ak#readme"
 }
