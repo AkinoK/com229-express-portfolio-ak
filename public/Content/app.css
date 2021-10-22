@@ -52,6 +52,14 @@ hr {
 
 #displayName{
   pointer-events: none;
+  /* margin-top: 5px; */
+  padding-right: 0;
+  /* border-left-style: inset; */
+}
+
+#login, #logout {
+  padding: 0;
+  font-size: 13px;
 }
 
 /* Home page */

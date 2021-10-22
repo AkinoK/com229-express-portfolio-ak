@@ -53,7 +53,7 @@
         </a>
       </li> 
       <li class="nav-item dropdown">
-        <% if (title == "Contacts List" || title == "Add a new contact") { %>
+        <% if (title == "Contacts List" || title == "Add a new contact"  || title == "Business Contacts List") { %>
           <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Business Contacts List</a>
         <% } else { %>
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fas fa-list"></i> Business Contacts List</a>
@@ -69,16 +69,20 @@
         <a  id="displayName" class="nav-link" href="#">  
         <i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></a></li>
         <li class="nav-item">
+        <button id="logout" class="btn btn-outline-success">
         <a class="nav-link"  href="/logout">
-          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>        
+          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        </button>        
       <% } else { %>
         <li class="nav-item">
-        <a class="nav-link"><a href="/login">
-          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>              
-               
+        <button id="login" class="btn btn-outline-success">
+        <a class="nav-link" a href="/login">
+          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+        </button>                          
       <% } %>
       </li>
     </ul>
+    
   </nav>
 
 
