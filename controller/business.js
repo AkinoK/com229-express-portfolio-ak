@@ -28,7 +28,7 @@ exports.list =  function(req, res, next) {
                 displayName: req.user ? req.user.displayName : ' '
             })            
         }
-    }).sort(mysort)
+    }).sort(mysort) 
 };
 
 
