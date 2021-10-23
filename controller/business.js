@@ -1,3 +1,7 @@
+/* File name : controller/business.js
+Student name : Akino Kashima 
+Student ID : 301155967
+Date: 10.23.2021  */
 
 // Connect to my model
 let Business = require('../models/business');

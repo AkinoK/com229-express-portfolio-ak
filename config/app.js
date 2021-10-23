@@ -1,3 +1,8 @@
+/* File name : config/app.js
+Student name : Akino Kashima 
+Student ID : 301155967
+Date: 10.23.2021  */
+
 // Installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
@@ -17,7 +22,6 @@ let passportJWT = require('passport-jwt');
 let JWTStrategy = passportJWT.Strategy;
 let ExtractJWT = passportJWT.ExtractJwt;
 
-
 ///Database setup
 let mongoose = require('mongoose');
 let dbURI = require('./db');
@@ -31,10 +35,10 @@ mongoDB.once('open', ()=>{
   console.log('Connected to MongoDB...');
 });
 
+// routes
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let businessRouter = require('../routes/business');
-
 
 let app = express();
 

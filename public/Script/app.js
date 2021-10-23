@@ -1,7 +1,7 @@
-//File name : app.js
+//File name : Script/app.js
 //Student name : Akino Kashima 
 //Student ID : 301155967
-//Date: 10.02.2021 
+//Date: 10.23.2021 
 
 // For Business Contacts List Page
 if(getTitle == "Business Contacts List" || "Edit contact")

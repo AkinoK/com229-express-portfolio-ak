@@ -1,3 +1,7 @@
+/* File name : config/db.js
+Student name : Akino Kashima 
+Student ID : 301155967
+Date: 10.23.2021  */
 
 module.exports = {
     //"URI": "mongodb://localhost/stock"
