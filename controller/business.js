@@ -2,6 +2,9 @@
 // Connect to my model
 let Business = require('../models/business');
 
+// send messages back to user by jwt (for transition to API)
+let jwt = require('jsonwebtoken');
+
 // Alphabetical order
 let mysort = {contactName: 1};
 

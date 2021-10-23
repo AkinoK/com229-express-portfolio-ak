@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 let mongoose = require('mongoose');
 
+// send messages back to user by jwt (for transition to API)
+let jwt = require('jsonwebtoken');
+
 let passport = require('passport');
 
 let businessController = require('../controller/business');

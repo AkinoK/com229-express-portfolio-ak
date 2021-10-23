@@ -52,9 +52,8 @@ hr {
 
 #displayName{
   pointer-events: none;
-  /* margin-top: 5px; */
   padding-right: 0;
-  /* border-left-style: inset; */
+  color: seagreen;
 }
 
 #login, #logout {

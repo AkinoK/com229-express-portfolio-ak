@@ -3,6 +3,10 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 
+// enable jwt
+let jwt = require('jsonwebtoken');
+let dbURI = require('../config/db');
+
 // create the User Model instance
 let userModel = require('../models/user');
 let User = userModel.User; // alias
@@ -67,26 +71,26 @@ exports.processLoginPage = (req, res, next) => {
                 return next(err);
             }
 
-            // const payload = 
-            // {
-            //     id: user._id,
-            //     displayName: user.displayName,
-            //     username: user.username,
-            //     email: user.email
-            // }
+            const payload = 
+            {
+                id: user._id,
+                displayName: user.displayName,
+                username: user.username,
+                email: user.email
+            }
 
-            // const authToken = jwt.sign(payload, DB.Secret, {
-            //     expiresIn: 604800 // 1 week
-            // });
+            const authToken = jwt.sign(payload, dbURI.Secret, {
+                expiresIn: 604800 // 604800 seconds = 1 week
+            });
 
-            // /* TODO - Getting Ready to convert to API
+            //TODO - Getting Ready to convert to API
             // res.json({success: true, msg: 'User Logged in Successfully!', user: {
             //     id: user._id,
             //     displayName: user.displayName,
             //     username: user.username,
             //     email: user.email
             // }, token: authToken});
-            // */
+        
 
             return res.redirect('/business/list');
         });
@@ -144,9 +148,9 @@ module.exports.processRegisterPage = (req, res, next) => {
 
             // redirect the user and authenticate them
 
-            /* TODO - Getting Ready to convert to API
-            res.json({success: true, msg: 'User Registered Successfully!'});
-            */
+            // TODO - Getting Ready to convert to API
+            // res.json({success: true, msg: 'User Registered Successfully!'});
+            
 
             return passport.authenticate('local')(req, res, () => {
                 res.redirect('/business/list')
