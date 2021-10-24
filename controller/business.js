@@ -12,6 +12,7 @@ let jwt = require('jsonwebtoken');
 // Alphabetical order
 let mysort = {contactName: 1};
 
+// Display contacts list
 exports.list =  function(req, res, next) {
     Business.find((err, businessList) => {
         
@@ -32,7 +33,7 @@ exports.list =  function(req, res, next) {
 };
 
 
-
+// Display Edit contact page
 exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -54,6 +55,7 @@ exports.displayEditPage = (req, res, next) => {
     });
 }
 
+// Update the editted contact
 exports.processEditPage = (req, res, next) => {
     let id = req.params.id
 
@@ -64,7 +66,6 @@ exports.processEditPage = (req, res, next) => {
         email: req.body.email,
     });
 
-    //Update the editted contact
     Business.updateOne({_id: id}, updatedContact, (err) => {
         if(err)
         {
@@ -79,7 +80,7 @@ exports.processEditPage = (req, res, next) => {
     });
 }
 
-// Add a new contact - display a blank format for user input
+// Display Add a new contact page - display a blank format for user input
 exports.displayAddPage = (req, res, next) => {
     let newContact = Business();
 
@@ -100,7 +101,7 @@ exports.processAddPage = (req, res, next) => {
         email: req.body.email,
     });
 
-    // send new contact to creat
+    // send the new contact to store
     Business.create(newContact, (err, contact) =>{
         if(err)
         {
