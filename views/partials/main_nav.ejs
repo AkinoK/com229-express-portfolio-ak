@@ -1,5 +1,5 @@
   <!-- Main Nav bar  -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
     <!-- Brand/logo -->
     <a class="navbar-brand" href="/">
       <img id="logo" src="/Assets/images/image_logo2.png" alt="logo" >
@@ -65,28 +65,27 @@
       </li>
       <!-- When user is logged in -->
       <li>
-      <% if(typeof displayName == 'string' && displayName) { %>
-        <li class="nav-item">
-        <a  id="displayName" class="nav-link" href="#">  
-        <i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></a></li>
-        <li class="nav-item">
-        <button id="logout" class="btn btn-outline-success">
-        <a class="nav-link"  href="/logout">
-          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
-        </button>
-        <!-- When user is not logged in         -->
-      <% } else { %>
-        <li class="nav-item">
-        <button id="login" class="btn btn-outline-success">
-        <a class="nav-link" a href="/login">
-          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
-        </button>                          
-      <% } %>
+        <% if(typeof username == 'string' && username) { %>
+          <li class="nav-item">
+          <a  id="userNameDisplay" class="nav-link" href="#">  
+          <i  class="fas fa-lg fa-user"></i> Welcome, <%= username %></a></li>
+          <li class="nav-item">
+          <button id="logout" class="btn btn-outline-success">
+          <a class="nav-link"  href="/logout">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+          </button>
+          <!-- When user is not logged in -->
+        <% } else { %>
+          <li class="nav-item">
+          <button id="login" class="btn btn-outline-success">
+          <a class="nav-link" a href="/login">
+            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+          </button>                          
+        <% } %>
       </li>
     </ul>
     
   </nav>
-
 
 
 

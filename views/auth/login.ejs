@@ -9,24 +9,29 @@
             <%= messages %>
         </div>
     <% } %>
-
+    <!-- Login form -->
     <div class="row">
         <form id="loginform"method="POST" autocomplete="off">
             <h1 id="logintitle">Please Login..  <span><i id="keyicon" class="fa fa-key"></i></span></h1>
-                <p class="login-field">
+                <p class="login-field"></p>
                     <input type="text" class="loginform-control"
-                        name="username" placeholder="Username"
-                        id="username" required autofocus>
-                
+                    name="username" placeholder="Username"
+                    id="username" required autofocus>                
                 <p class="login-field"></p>
                     <input type="password" class="loginform-control"
                         name="password" placeholder="Password"
                         id="password" required>
-                </p>
+                
                 <div class="loginpg-btns">
                     <button class="loginbtn">Log in</button>
                     <a href="/">
                     <input class="cancelbtn" type="button" value="Cancel">
+                    </a>
+                </div>
+                <div class="register-link">
+                    <a id="registerlink" href="/register" style="text-decoration: none">                
+                        <i class="fas fa-user-plus"></i> 
+                        Register Now
                     </a>
                 </div>
         </form>               

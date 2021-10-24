@@ -10,12 +10,29 @@ let passportLocalMongoose = require('passport-local-mongoose');
 let User = mongoose.Schema
 (
     {
+        firstname: 
+        {
+            type: String,
+            default: '',
+            trim: true,
+            required: 'firstname is required'
+        },
+        lastname: 
+        {
+            type: String,
+            default: '',
+            trim: true,
+            required: 'lastname is required'
+        },
         username: 
         {
             type: String,
             default: '',
             trim: true,
-            required: 'username is required'
+            required: 'username is required',
+            validate: [(password) => {
+                return password && password.length > 6;
+            }, 'Password should be longer']
         },
         
         password: 
@@ -31,14 +48,8 @@ let User = mongoose.Schema
             type: String,
             default: '',
             trim: true,
-            required: 'email address is required'
-       },
-       displayName: 
-       {
-            type: String,
-            default: '',
-            trim: true,
-            required: 'Display Name is required'
+            required: 'email address is required',
+            match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
        },
        created: 
        {

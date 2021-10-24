@@ -18,23 +18,23 @@ let User = userModel.User; // alias
 
 
 exports.home = function(req, res, next) {
-    res.render('index', { title: 'Home', displayName: req.user ? req.user.displayName : '' });
+    res.render('index', { title: 'Home', username: req.user ? req.user.username : '' });
 };
 
 exports.about = function(req, res, next) {
-    res.render('about', { title: 'About', displayName: req.user ? req.user.displayName : '' });
+    res.render('about', { title: 'About', username: req.user ? req.user.username : '' });
 }
 
 exports.projects = function(req, res, next) {
-    res.render('projects', { title: 'Projects' , displayName: req.user ? req.user.displayName : ''});
+    res.render('projects', { title: 'Projects' , username: req.user ? req.user.username : ''});
 }
 
 exports.services = function(req, res, next) {
-    res.render('services', { title: 'Services' , displayName: req.user ? req.user.displayName : ''});
+    res.render('services', { title: 'Services' , username: req.user ? req.user.username : ''});
 }
 
 exports.contact = function(req, res, next) {
-    res.render('contact', { title: 'Contact' , displayName: req.user ? req.user.displayName : ''});
+    res.render('contact', { title: 'Contact' , username: req.user ? req.user.username : ''});
 }
 
 // Login page
@@ -46,7 +46,7 @@ exports.displayLoginPage = (req, res, next) => {
         {
            title: "Login",
            messages: req.flash('loginMessage'),
-           displayName: req.user ? req.user.displayName : '' 
+           username: req.user ? req.user.username : '' 
         })
     }
     else
@@ -55,6 +55,7 @@ exports.displayLoginPage = (req, res, next) => {
     }
 }
 
+// Process Login information
 exports.processLoginPage = (req, res, next) => {
     passport.authenticate('local',
     (err, user, info) => {
@@ -79,7 +80,7 @@ exports.processLoginPage = (req, res, next) => {
             const payload = 
             {
                 id: user._id,
-                displayName: user.displayName,
+                username: user.username,
                 username: user.username,
                 email: user.email
             }
@@ -87,14 +88,6 @@ exports.processLoginPage = (req, res, next) => {
             const authToken = jwt.sign(payload, dbURI.Secret, {
                 expiresIn: 604800 // 604800 seconds = 1 week
             });
-
-            //TODO - Getting Ready to convert to API
-            // res.json({success: true, msg: 'User Logged in Successfully!', user: {
-            //     id: user._id,
-            //     displayName: user.displayName,
-            //     username: user.username,
-            //     email: user.email
-            // }, token: authToken});
         
 
             return res.redirect('/business/list');
@@ -102,6 +95,7 @@ exports.processLoginPage = (req, res, next) => {
     })(req, res, next);
 }
 
+// Display Register Page
 module.exports.displayRegisterPage = (req, res, next) => {
     // check if the user is not already logged in
     if(!req.user)
@@ -110,7 +104,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
         {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            username: req.user ? req.user.username : ''
         });
     }
     else
@@ -119,13 +113,15 @@ module.exports.displayRegisterPage = (req, res, next) => {
     }
 }
 
+// Process register information
 module.exports.processRegisterPage = (req, res, next) => {
     // instantiate a user object
     let newUser = new User({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         username: req.body.username,
         password: req.body.password,
         email: req.body.email,
-        displayName: req.body.displayName
     });
 
     User.register(newUser, req.body.password, (err) => {
@@ -144,19 +140,12 @@ module.exports.processRegisterPage = (req, res, next) => {
             {
                 title: 'Register',
                 messages: req.flash('registerMessage'),
-                displayName: req.user ? req.user.displayName : ''
+                username: req.user ? req.user.username : ''
             });
         }
         else
         {
-            // if no error exists, then registration is successful
-
-            // redirect the user and authenticate them
-
-            // TODO - Getting Ready to convert to API
-            // res.json({success: true, msg: 'User Registered Successfully!'});
-            
-
+ 
             return passport.authenticate('local')(req, res, () => {
                 res.redirect('/business/list')
             });
@@ -164,6 +153,7 @@ module.exports.processRegisterPage = (req, res, next) => {
     });
 }
 
+// Logout
 module.exports.performLogout = (req, res, next) => {
     req.logout();
     res.redirect('/');

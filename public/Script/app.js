@@ -152,3 +152,22 @@ function createEventListeners() {
      window.attachEvent("onload", createEventListeners);
   }
 }
+
+// Register Form page - passwords match
+if(getTitle == "Register Form")
+{
+    const confirm = document.querySelector('input[name=password_confirm]');
+
+    confirm.addEventListener('change', onChange); 
+}
+
+function onChange() {
+    const password = document.querySelector('input[name=password]');
+    const confirm = document.querySelector('input[name=password_confirm]');
+    
+    if (confirm.value === password.value) {
+      confirm.setCustomValidity('');
+    } else {
+      confirm.setCustomValidity('Passwords do not match');
+    }
+}

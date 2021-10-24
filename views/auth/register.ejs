@@ -9,48 +9,42 @@
             <%= messages %>
         </div>
     <% } %>
-
+    <!-- Register form -->
     <div class="row">
-        <div class="offset-md-4 col-md-4">
-            <h1>Please Register</h1>
-            <form method="POST" autocomplete="off">
-                <fieldset class="form-group">
-                    <label for="username">Username: </label>
-                    <input type="text" class="form-control"
-                    name="username" placeholder="Enter username"
-                    id="username" required autofocus>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <label for="password">Password: </label>
-                    <input type="password" class="form-control"
-                    name="password" placeholder="Enter password"
-                    id="password" required>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <label for="email">Email: </label>
-                    <input type="email" class="form-control"
-                    name="email" placeholder="Enter Email Address"
-                    id="email" required>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <label for="displayName">Display Name: </label>
-                    <input type="text" class="form-control"
-                    name="displayName" placeholder="Enter Display Name"
-                    id="displayName" required>
-                </fieldset>
-
-                <fieldset class="form-group text-right">
-                    <input type="submit" class="btn btn-success" value="Register">
+        <form id="registerform" method="POST" autocomplete="off" validate>
+            <h1 id="registertitle"> Register Form <span><i id="keyicon" ></i></span></h1>
+                <p class="register-field"></p>
+                    <input type="text" class="registerform-control"
+                        name="firstname" placeholder="First name"
+                        id="firstname" required> 
+                <p class="register-field"></p>
+                    <input type="text" class="registerform-control"
+                        name="lastname" placeholder="Last name"
+                        id="lastname" required>                   
+                <p class="register-field"></p>
+                    <input type="text" class="registerform-control"
+                        name="username" placeholder="Username"
+                        id="username" required>                
+                <p class="register-field"></p>
+                    <input type="password" class="registerform-control" 
+                        name="password" placeholder="Password"
+                        id="password" required>
+                <p class="register-field"></p>
+                    <input type="password" class="registerform-control" 
+                        name="password_confirm" placeholder="Confirm Password"
+                        id="password_confirm" required>
+                <p class="register-field"></p>
+                    <input type="email" class="registerform-control"
+                        name="email" placeholder="Email Address"
+                        id="email" required>
+                                                   
+                <div class="registerpg-btns">
+                    <button type="submit" class="registerbtn">Register</button>
                     <a href="/">
-                        <input type="button" class="btn btn-warning" value="Cancel">
+                    <input class="cancelbtn" type="button" value="Cancel">
                     </a>
-                </fieldset>
-
-            </form>
-        </div>
+                </div>
+        </form>               
     </div>
    
 </main>

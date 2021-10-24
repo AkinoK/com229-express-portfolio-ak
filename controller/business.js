@@ -25,11 +25,12 @@ exports.list =  function(req, res, next) {
             res.render('business/businessList', {
                 title: 'Business Contacts List', 
                 BusinessList: businessList,
-                displayName: req.user ? req.user.displayName : ' '
+                username: req.user ? req.user.username : ' '
             })            
         }
     }).sort(mysort) 
 };
+
 
 
 exports.displayEditPage = (req, res, next) => {
@@ -47,7 +48,7 @@ exports.displayEditPage = (req, res, next) => {
             res.render('business/add_edit', {
                 title: 'Edit Contact', 
                 contact: contactToEdit,
-                displayName: req.user ? req.user.displayName : ' '
+                username: req.user ? req.user.username : ' '
             })
         }
     });
@@ -84,7 +85,8 @@ exports.displayAddPage = (req, res, next) => {
 
     res.render('business/add_edit', {
         title: 'Add a new contact',
-        contact: newContact
+        contact: newContact,
+        username: req.user ? req.user.username : ' '
     })          
 }
 
